@@ -1,8 +1,8 @@
 <?php
 $message = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
     $message = "Привет, $name! Твой email: $email";
 }
 ?>
@@ -10,20 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Форма обратной связи</title>
+    <title>Форма</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Форма обратной связи</h1>
-        <form method="POST" action="">
-            <input type="text" name="name" placeholder="Ваше имя" required>
-            <input type="email" name="email" placeholder="Ваш email" required>
+        <h1>Форма</h1>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="email" name="email" placeholder="Email" required>
             <button type="submit">Отправить</button>
         </form>
-        <?php if ($message): ?>
-            <div class="message"><?php echo $message; ?></div>
-        <?php endif; ?>
+        <?php if($message) echo "<div>$message</div>"; ?>
     </div>
 </body>
 </html>
