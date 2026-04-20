@@ -41,6 +41,9 @@
             
             <button type="submit">Зарегистрироваться</button>
         </form>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="calculator.php">🔢 Перейти к калькулятору</a>
+</div>
     </div>
 </body>
 </html>
