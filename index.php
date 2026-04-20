@@ -39,10 +39,12 @@
                 <input type="checkbox" name="agree" required> Я согласен с условиями
             </label>
             
-            <button type="submit">Зарегистрироваться</button>
+            <button type="submit">зарегистрироваться</button>
         </form>
-<div style="text-align: center; margin-top: 20px;">
-    <a href="calculator.php">🔢 Перейти к калькулятору</a>
+	<div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+    <a href="file_work.php">Работа с файлами</a> | 
+    <a href="folder_work.php">Работа с папками</a> |
+    <a href="calculator.php">Калькулятор</a>
 </div>
     </div>
 </body>
