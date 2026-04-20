@@ -1,27 +1,46 @@
-<?php
-$message = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST["name"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $message = "Привет, $name! Твой email: $email";
-}
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Форма</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Форма</h1>
-        <form method="POST">
-            <input type="text" name="name" placeholder="Имя" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <button type="submit">Отправить</button>
+        <h1>Регистрация пользователя</h1>
+        <form action="action.php" method="POST">
+            <label>Имя:</label>
+            <input type="text" name="first_name" placeholder="Введите имя" required>
+            
+            <label>Фамилия:</label>
+            <input type="text" name="last_name" placeholder="Введите фамилию" required>
+            
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="example@mail.com" required>
+            
+            <label>Пароль:</label>
+            <input type="password" name="password" placeholder="Введите пароль" required>
+            
+            <label>Подтверждение пароля:</label>
+            <input type="password" name="confirm_password" placeholder="Повторите пароль" required>
+            
+            <label>Дата рождения:</label>
+            <input type="date" name="birthdate" required>
+            
+            <label>Пол:</label>
+            <select name="gender" required>
+                <option value="">Выберите пол</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+                <option value="other">Другой</option>
+            </select>
+            
+            <label>
+                <input type="checkbox" name="agree" required> Я согласен с условиями
+            </label>
+            
+            <button type="submit">Зарегистрироваться</button>
         </form>
-        <?php if($message) echo "<div>$message</div>"; ?>
     </div>
 </body>
 </html>
